@@ -7,8 +7,8 @@ from io import BytesIO
 app = Flask(__name__)
 
 # Load the model and class names
-MODEL = tf.keras.models.load_model("./version1")
-CLASS_NAMES = ['normal', 'pothole']
+MODEL = tf.keras.models.load_model("./initial_filter_version2")
+CLASS_NAMES = ['not a road', 'road']
 
 # Define allowed file extensions
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
@@ -50,4 +50,4 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(port=5000)
+    app.run(host="0.0.0.0", port=5000)
