@@ -39,10 +39,11 @@ def predict():
         confidence = np.max(prediction[0])
         print('predicted_class', predicted_class)
         print('confidence', float(confidence * 100))
-        return jsonify({
-            'predicted_class': predicted_class,
-            'confidence': float(confidence * 100)
-        })
+        # return jsonify({
+        #     'predicted_class': predicted_class,
+        #     'confidence': float(confidence * 100)
+        # })
+        if predicted_class ==
 
     else:
         # If no data is sent in the request, return an error response
